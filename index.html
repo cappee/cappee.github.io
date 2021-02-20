@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio | Gabriele Cappellaro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
+
+    body {
+        background-color: #000000;
+        margin: 0;
+    }
+
+    div {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .cappee {
+        font-weight: 600;
+        font-size: 5vw;
+        user-select: none;
+    }
+
+    .cappee .text-wrapper {
+        position: relative;
+        display: inline-block;
+        padding-top: 0.1em;
+        padding-right: 0.05em;
+        padding-bottom: 0.15em;
+    }
+
+    .cappee .separator {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 0.5vw;
+        background-color: #fff;
+        transform-origin: 0 50%;
+    }
+
+    .cappee .letter {
+        opacity: 0;
+        display: inline-block;
+        line-height: 1em;
+    }
+
+    h1 {
+        color: #f2f2f2;
+        font-size: 128px;
+        font-family: 'Inter', sans-serif;
+        text-align: center;
+    }
+</style>
+
+<body id="body">
+    <html>
+        <div style="height: 600px; display: block;">
+            <h1 class="cappee" style="margin-top: 200px;">
+                <span class="text-wrapper">
+                  <span class="separator"></span>
+                  <span class="letters">Gabriele Cappellaro</span>
+                </span>
+            </h1>
+        </div>
+        
+    </html>
+
+    <script>
+        // Wrap every letter in a span
+        var textWrapper = document.querySelector('.cappee .letters');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: false})
+            .add({
+                targets: '.cappee .separator',
+                scaleY: [0,1],
+                opacity: [0.5,1],
+                easing: "easeOutExpo",
+                duration: 700
+            })
+            .add({
+                targets: '.cappee .separator',
+                translateX: [0, document.querySelector('.cappee .letters').getBoundingClientRect().width + 4],
+                easing: "easeOutExpo",
+                duration: 1000,
+                delay: 100
+            })
+            .add({
+                targets: '.cappee .letter',
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 700,
+                offset: '-=775',
+                delay: (el, i) => 34 * (i+1)
+            })
+            .add({
+                targets: '.cappee .separator',
+                opacity: 0,
+                easing: "easeInExpo",
+                duration: 700,
+                delay: 400
+            });
+    </script>
+</body>
