@@ -3,13 +3,19 @@
     <meta charset="UTF-8">
     <title>Portfolio | Gabriele Cappellaro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </head>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
 
+    html {
+        height: 100%;
+    }
+
     body {
+        height: 100%;
         background-color: #000000;
         margin: 0;
     }
@@ -37,7 +43,7 @@
         position: absolute;
         left: 0;
         height: 100%;
-        width: 0.5vw;
+        width: 1vw;
         background-color: #fff;
         transform-origin: 0 50%;
     }
@@ -107,18 +113,17 @@
         margin-right: auto;
         margin-bottom: 60px;
         border-radius: 18px;
-        border: 2.5px solid #fff;
+        border: 3.5px solid #fff;
     }
 
     .mouse-button {
         background-color: #fff;
         width: 4px;
         height: 8px;
-        border-radius: 3px;
-        position: absolute;
-        top: 10px;
-        left: 50%;
-        margin: 0 0 0 -2px;
+        border-radius: 4px;
+        position: relative;
+        display: block;
+        margin: 10px auto 0 ;
         animation: mouse-scroll 1s infinite alternate;
     }
 
@@ -131,14 +136,14 @@
 
 <body id="body">
     <html>
-        <div style="height: 600px; display: block; position: relative;">
+        <div style="min-height: 100%">
             <h1 class="cappee" style="margin-top: 200px;">
                 <span class="text-wrapper">
                   <span class="separator"></span>
                   <span class="letters">Gabriele Cappellaro</span>
                 </span>
             </h1>
-            <div style="position: absolute; left: 0; bottom: 0; width: 100%;">
+            <div style="position: absolute; bottom: 0; width: 100%;">
                 <div class="mouse">
                     <div class="mouse-button">&nbsp;</div>
                 </div>
@@ -176,7 +181,7 @@
             })
             .add({
                 targets: '.cappee .separator',
-                translateX: [0, document.querySelector('.cappee .letters').getBoundingClientRect().width + 4],
+                translateX: [0, document.querySelector('.cappee .letters').getBoundingClientRect().width + 10],
                 easing: "easeOutExpo",
                 duration: 1000,
                 delay: 100
