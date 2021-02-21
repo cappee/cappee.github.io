@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <style>
@@ -140,7 +141,7 @@
             <h1 class="cappee" style="margin-top: 200px;">
                 <span class="text-wrapper">
                   <span class="separator"></span>
-                  <span class="letters">Gabriele Cappellaro</span>
+                  <span class="letters" >Gabriele Cappellaro</span>
                 </span>
             </h1>
             <div style="position: absolute; bottom: 0; width: 100%;">
@@ -170,9 +171,8 @@
         // Wrap every letter in a span
         var textWrapper = document.querySelector('.cappee .letters');
         textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
-
-        console.log(document.querySelector('.cappee .letters').getBoundingClientRect().width)
-        document.getElementById('about-title').innerHTML = document.querySelector('.cappee .letters').getBoundingClientRect().width;
+        
+        document.getElementById('about-title').innerHTML = document.querySelector('.cappee .letters').getBoundingClientRect().width + " / " + $('.cappee .letters').width();
 
         anime.timeline({loop: false})
             .add({
@@ -184,10 +184,10 @@
             })
             .add({
                 targets: '.cappee .separator',
-                translateX: [0, document.querySelector('.cappee .letters').getBoundingClientRect().width + 10],
+                translateX: [0, $('.cappee .letters').width() + 10],
                 easing: "easeOutExpo",
                 duration: 1000,
-                delay: 100
+                delay: 200
             })
             .add({
                 targets: '.cappee .letter',
