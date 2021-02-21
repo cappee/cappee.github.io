@@ -172,7 +172,7 @@
         var textWrapper = document.querySelector('.cappee .letters');
         textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
         
-        document.getElementById('about-title').innerHTML = document.querySelector('.cappee .letters').getBoundingClientRect().width + " / " + $('.cappee .letters').width();
+        document.getElementById('about-title').innerHTML = document.querySelector('.cappee .text-wrapper').getBoundingClientRect().width + " / " + $('.cappee .text-wrapper').width();
 
         anime.timeline({loop: false})
             .add({
@@ -184,7 +184,7 @@
             })
             .add({
                 targets: '.cappee .separator',
-                translateX: [0, $('.cappee .letters').width() + 10],
+                translateX: [0, $('.cappee .text-wrapper').width() + 10],
                 easing: "easeOutExpo",
                 duration: 1000,
                 delay: 200
