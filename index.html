@@ -34,9 +34,6 @@
 
     .cappee .text-wrapper {
         position: relative;
-        padding-top: 0.1em;
-        padding-right: 0.05em;
-        padding-bottom: 0.15em;
     }
 
     .cappee .separator {
@@ -168,41 +165,43 @@
     </html>
 
     <script>
-        var separatorEnd = $('.cappee .letters').width();
-        document.getElementById('about-title').innerHTML = document.querySelector('.cappee .letters').getBoundingClientRect().width + " / " + $('.cappee .letters').width();
         // Wrap every letter in a span
         var textWrapper = document.querySelector('.cappee .letters');
         textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+        $(window).on("load", function() {
+            var separatorEnd = $('.cappee .letters').width();
+            document.getElementById('about-title').innerHTML = document.querySelector('.cappee .letters').getBoundingClientRect().width + " / " + $('.cappee .letters').width();
 
-        anime.timeline({loop: false})
-            .add({
-                targets: '.cappee .separator',
-                scaleY: [0,1],
-                opacity: [0.5,1],
-                easing: "easeOutExpo",
-                duration: 1000
-            })
-            .add({
-                targets: '.cappee .separator',
-                translateX: [0, separatorEnd + 10],
-                easing: "easeOutExpo",
-                duration: 1000,
-                delay: 200
-            })
-            .add({
-                targets: '.cappee .letter',
-                opacity: [0,1],
-                easing: "easeOutExpo",
-                duration: 700,
-                offset: '-=775',
-                delay: (el, i) => 34 * (i+1)
-            })
-            .add({
-                targets: '.cappee .separator',
-                opacity: 0,
-                easing: "easeInExpo",
-                duration: 700,
-                delay: 400
-            });
+            anime.timeline({loop: false})
+                .add({
+                    targets: '.cappee .separator',
+                    scaleY: [0,1],
+                    opacity: [0.5,1],
+                    easing: "easeOutExpo",
+                    duration: 1000
+                })
+                .add({
+                    targets: '.cappee .separator',
+                    translateX: [0, separatorEnd + 10],
+                    easing: "easeOutExpo",
+                    duration: 1000,
+                    delay: 200
+                })
+                .add({
+                    targets: '.cappee .letter',
+                    opacity: [0,1],
+                    easing: "easeOutExpo",
+                    duration: 700,
+                    offset: '-=775',
+                    delay: (el, i) => 34 * (i+1)
+                })
+                .add({
+                    targets: '.cappee .separator',
+                    opacity: 0,
+                    easing: "easeInExpo",
+                    duration: 700,
+                    delay: 400
+                });
+        });
     </script>
 </body>
