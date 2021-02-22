@@ -11,14 +11,12 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
 
-    html {
-        height: 100%;
-    }
-
-    body {
+    html, body {
         height: 100%;
         background-color: #000000;
         margin: 0;
+        font-family: 'Inter', sans-serif;
+        user-select: none;
     }
 
     div {
@@ -28,8 +26,7 @@
 
     .cappee {
         font-weight: 600;
-        font-size: min(max(2rem, 6vw), 128px);
-        user-select: none;
+        font-size: clamp(100%, 1rem + 4vw, 128px);
     }
 
     .cappee .text-wrapper {
@@ -41,7 +38,7 @@
         position: absolute;
         left: 0;
         height: 100%;
-        width: 1vw;
+        width: 0.8vw;
         background-color: #fff;
         transform-origin: 0 50%;
     }
@@ -55,27 +52,23 @@
     h1 {
         color: #f2f2f2;
         font-size: 128px;
-        font-family: 'Inter', sans-serif;
         text-align: center;
     }
 
     h2 {
         color: #000000;
         text-decoration: none;
-        font-size: min(max(2rem, 5vw), 64px);
-        font-family: 'Inter', sans-serif;
+        font-size: clamp(100%, 1rem + 3vw, 64px);
         font-style: bold;
         text-align: left;
-        margin-left: 32px;
-        margin-top: 32px;
-        margin-bottom: 0px;
+        margin-left: clamp(16px, 5%, 42px);
+        margin-top: clamp(16px, 5%, 42px);
     }
 
     h3 {
         color: white;
         text-decoration: none;
-        font-size: 32px;
-        font-family: 'Inter', sans-serif;
+        font-size: clamp(100%, 1rem + 1.5vw, 32px);
         font-style: normal;
         text-align: left;
         margin-left: 36px;
@@ -87,7 +80,6 @@
         color: white;
         text-decoration: none;
         font-size: 24px;
-        font-family: 'Inter', sans-serif;
         font-style: normal;
         text-align: left;
         margin-left: 36px;
@@ -98,7 +90,6 @@
         font-size: 30px;
         text-align: center;
         color: #000000;
-        font-family: 'Inter', sans-serif;
         font-style: bold;
     }
 
@@ -141,6 +132,7 @@
                   <span class="letters" >Gabriele Cappellaro</span>
                 </span>
             </h1>
+            <h3 id="subtitle" style="color: grey; margin: 0; text-align: center; opacity: 0;">Student, developer and tech addicted.</h2>
             <div style="position: absolute; bottom: 0; width: 100%;">
                 <div class="mouse">
                     <div class="mouse-button">&nbsp;</div>
@@ -149,7 +141,7 @@
         </div>
         
         <div style="min-height: 100%; background-color: #f44336;" id="about">
-            <h2 id="about-title" style="display: inline-block">About me</h2>
+            <h2 style="display: inline-block">About me</h2>
         </div>
 
         <div style="min-height: 100%; background-color: #4caf50;" id="education">
@@ -168,10 +160,8 @@
         // Wrap every letter in a span
         var textWrapper = document.querySelector('.cappee .letters');
         textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+        // Start amime when window is loaded
         $(window).on("load", function() {
-            var separatorEnd = $('.cappee .letters').width();
-            document.getElementById('about-title').innerHTML = document.querySelector('.cappee .letters').getBoundingClientRect().width + " / " + $('.cappee .letters').width();
-
             anime.timeline({loop: false})
                 .add({
                     targets: '.cappee .separator',
@@ -182,7 +172,7 @@
                 })
                 .add({
                     targets: '.cappee .separator',
-                    translateX: [0, separatorEnd + 10],
+                    translateX: [0, $('.cappee .letters').width() + 10],
                     easing: "easeOutExpo",
                     duration: 1000,
                     delay: 200
@@ -196,12 +186,17 @@
                     delay: (el, i) => 34 * (i+1)
                 })
                 .add({
+                    targets: '#subtitle',
+                    opacity: [0,1],
+                    easing: "easeOutExpo",
+                    duration: 700
+                })
+                .add({
                     targets: '.cappee .separator',
                     opacity: 0,
                     easing: "easeInExpo",
-                    duration: 700,
-                    delay: 400
-                });
+                    duration: 700
+                })
         });
     </script>
 </body>
