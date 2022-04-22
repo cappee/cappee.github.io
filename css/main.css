@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+body {
+  background-color: black;
+  margin: 0;
+  height: 400vh;
+}
+
+@media screen and (max-width: 991px) {
+  body {
+    height: auto !important; 
+  }
+
+  div {
+    display: none !important;
+  }
+
+  .mobile {
+    display: block !important;
+    margin: 0;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    font-size: 2rem;
+  }
+}
+
+span, object {
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+/Edge */
+  user-select: none;
+  /* Standard */
+}
+
+span {
+  font-family: 'Inter', 'sans-serif';
+  color: white;
+}
+
+#blob-1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70vh;
+  height: 70vh;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  padding: 2vh 2vw;
+}
+
+#cappee {
+  position: relative;
+  left: 1vw;
+  font-size: 3vw;
+  font-weight: 600;
+}
+
+#menu {
+  position: relative;
+  width: 2vw;
+}
+
+#menu:active {
+  top: 1px;
+}
+
+#blob-2 {
+  position: absolute;
+  top: 110vh;
+  left: 0;
+  height: 70vh;
+  width: 64vh;
+}
+
+#blob-3 {
+  position: absolute;
+  bottom: -300vh;
+  right: 0;
+  height: 125vh;
+}
+
+#designed-by {
+  position: absolute;
+  bottom: -300vh;
+  left: 0;
+  margin: 1vw 1vw;
+}
+
+#circle-1 {
+  width: 30vw;
+  height: 30vw;
+}
+
+#circle-1-small {
+  position: absolute;
+  top: 22vh;
+  left: 20vw;
+  width: 8vw;
+  height: 8vw;
+}
+
+#circle-1-big {
+  width: 11vw;
+  height: 11vw;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.semibold {
+  font-weight: 600;
+}

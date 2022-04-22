@@ -1,204 +1,45 @@
-<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Portfolio | Gabriele Cappellaro</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#000">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Portfolio | Gabriele Cappellaro</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
-
-    html, body {
-        height: 100%;
-        background-color: #000000;
-        margin: 0;
-        font-family: 'Inter', sans-serif;
-        user-select: none;
-    }
-
-    div {
-        display: inline-block;
-        width: 100%;
-    }
-
-    .cappee {
-        font-weight: 600;
-        font-size: clamp(100%, 1rem + 4vw, 128px);
-    }
-
-    .cappee .text-wrapper {
-        position: relative;
-    }
-
-    .cappee .separator {
-        opacity: 0;
-        position: absolute;
-        left: 0;
-        height: 100%;
-        width: 0.8vw;
-        background-color: #fff;
-        transform-origin: 0 50%;
-    }
-
-    .cappee .letter {
-        opacity: 0;
-        display: inline-block;
-        line-height: 1em;
-    }
-
-    h1 {
-        color: #ffffff;
-        font-size: 128px;
-        text-align: center;
-    }
-
-    h2 {
-        color: #000000;
-        text-decoration: none;
-        font-size: clamp(100%, 1rem + 3vw, 64px);
-        font-style: bold;
-        text-align: left;
-        margin-left: clamp(16px, 5%, 42px);
-        margin-top: clamp(16px, 5%, 42px);
-    }
-
-    h3 {
-        color: white;
-        text-decoration: none;
-        font-size: clamp(100%, 1rem + 1.5vw, 32px);
-        font-style: normal;
-        text-align: left;
-        margin-left: 36px;
-        margin-top: 8px;
-        margin-bottom: 8px;
-    }
-
-    h4 {
-        color: white;
-        text-decoration: none;
-        font-size: 24px;
-        font-style: normal;
-        text-align: left;
-        margin-left: 36px;
-        margin-top: 8px;
-    }
-
-    p {
-        font-size: 30px;
-        text-align: center;
-        color: #000000;
-        font-style: bold;
-    }
-
-    .mouse {
-        width: 26px;
-        height: 40px;
-        position: relative;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 60px;
-        border-radius: 18px;
-        border: 3.5px solid #fff;
-    }
-
-    .mouse-button {
-        background-color: #fff;
-        width: 4px;
-        height: 8px;
-        border-radius: 4px;
-        position: relative;
-        display: block;
-        margin: 10px auto 0 ;
-        animation: mouse-scroll 1s infinite alternate;
-    }
-
-    @keyframes mouse-scroll {
-        to {
-            transform: translate(0, 6px) scale(1, 0.8);
-        }
-    }
-</style>
-
-<body id="body">
-    <html>
-        <div style="min-height: 100%">
-            <h1 class="cappee" style="margin-top: 200px;">
-                <span class="text-wrapper">
-                  <span class="separator"></span>
-                  <span class="letters" >Gabriele Cappellaro</span>
-                </span>
-            </h1>
-            <h3 id="subtitle" style="margin: 0; text-align: center; opacity: 0;">
-                <a style="color: #4caf50;">Student,</a> <a style="color: #ffeb3b;">developer</a> <a style="color: #2196f3;">and tech addicted.</a>
-            </h3>
-            <div style="position: absolute; bottom: 0; width: 100%;">
-                <div class="mouse">
-                    <div class="mouse-button">&nbsp;</div>
-                </div>
-            </div>
+<body>
+    <div class="toolbar">
+        <svg id="menu" width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="41" height="8" rx="2" fill="white" />
+            <rect y="16" width="41" height="8" rx="2" fill="white" />
+            <rect y="32" width="41" height="8" rx="2" fill="white" />
+        </svg>
+        <span id="cappee">CAPPEE</span>
+    </div>
+    <div class="page">
+        <object id="blob-1" data="images/blob_1.svg" type="image/svg+xml"></object>
+        <object id="circle-1-small" data="images/circle_1_1.svg" type="image/svg+xml"></object>
+        <div style="position: absolute; top: 67vh; left: 34vw;">
+            <object id="circle-1-big" data="images/circle_1_3.svg" type="image/svg+xml"></object>
+            <span class="center medium" style="font-size: 3.4vw; z-index: 99999;">19<span class="regular">yo</span></span>
         </div>
-        
-        <div style="min-height: 100%; background-color: #f44336;" id="about">
-            <h2 style="display: inline-block">About me</h2>
+        <div style="position: absolute; top: 25vh; left: 18vw;">
+            <object id="circle-1" data="images/circle_1_2.svg" type="image/svg+xml"></object>
+            <span class="center semibold" style="font-size: 3.7vw;">Hello!<br>I'm a<br>software<br>developer.</span>
         </div>
 
-        <div style="min-height: 100%; background-color: #4caf50;" id="education">
-            <h2 style="display: inline-block">My education</h2>
-        </div>
+        <object id="blob-2" data="images/blob_2.svg" type="image/svg+xml"></object>
 
-        <div style="min-height: 100%; background-color: #2196f3;" id="skills">
-            <h2 style="display: inline-block">My skills</h2>
-        </div>
-        <div style="min-height: 100%; background-color: #ffeb3b;" id="projects">
-            <h2 style="display: inline-block">My beautiful projects</h2>
-        </div>
-    </html>
 
-    <script>
-        // Wrap every letter in a span
-        var textWrapper = document.querySelector('.cappee .letters');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
-        // Start amime when window is loaded
-        $(window).on("load", function() {
-            anime.timeline({loop: false})
-                .add({
-                    targets: '.cappee .separator',
-                    scaleY: [0,1],
-                    opacity: [0.5,1],
-                    easing: "easeOutExpo",
-                    duration: 1000
-                })
-                .add({
-                    targets: '.cappee .separator',
-                    translateX: [0, $('.cappee .letters').width() + 10],
-                    easing: "easeOutExpo",
-                    duration: 1000,
-                    delay: 200
-                })
-                .add({
-                    targets: '.cappee .letter',
-                    opacity: [0,1],
-                    easing: "easeOutExpo",
-                    duration: 700,
-                    offset: '-=775',
-                    delay: (el, i) => 34 * (i+1)
-                })
-                .add({
-                    targets: '#subtitle',
-                    opacity: [0,1],
-                    easing: "easeOutExpo",
-                    duration: 700
-                })
-                .add({
-                    targets: '.cappee .separator',
-                    opacity: 0,
-                    easing: "easeInExpo",
-                    duration: 700
-                })
-        });
-    </script>
+        <object id="blob-3" data="images/blob_3.svg" type="image/svg+xml"></object>
+        <span id="designed-by">Designed by <span style="font-weight: 600;">CAPPEE</span> in 🇮🇹️</span>
+    </div>
+    <div class="mobile center" style="display: none;">
+        <strong>CAPPEE</strong><br><br>
+        Please, visit this website from a desktop.
+    </div>
+
 </body>
+
+</html>
