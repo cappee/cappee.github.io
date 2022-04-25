@@ -10,22 +10,21 @@
 
 <body>
     <div class="toolbar">
-        <svg id="menu" width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="41" height="8" rx="2" fill="white" />
-            <rect y="16" width="41" height="8" rx="2" fill="white" />
-            <rect y="32" width="41" height="8" rx="2" fill="white" />
+        <svg id="menu" width="41" height="40" viewBox="0 0 41 40" fill="none" onclick="openDrawer()" xmlns="http://www.w3.org/2000/svg">
+            <rect width="41" height="8" rx="2" fill="white"/>
+            <rect y="16" width="41" height="8" rx="2" fill="white"/>
+            <rect y="32" width="41" height="8" rx="2" fill="white"/>
         </svg>
         <span id="cappee">CAPPEE</span>
     </div>
+    <div id="drawer">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeDrawer()">&times;</a>
+    </div>
     <div class="page">
         <object id="blob-1" data="images/blob_1.svg" type="image/svg+xml"></object>
-        <object id="circle-1-small" data="images/circle_1_1.svg" type="image/svg+xml"></object>
-        <div style="position: absolute; top: 67vh; left: 34vw;">
-            <object id="circle-1-big" data="images/circle_1_3.svg" type="image/svg+xml"></object>
-            <span class="center medium" style="font-size: 3.4vw; z-index: 99999;">19<span class="regular">yo</span></span>
-        </div>
-        <div style="position: absolute; top: 25vh; left: 18vw;">
-            <object id="circle-1" data="images/circle_1_2.svg" type="image/svg+xml"></object>
+        <object id="circle-1-1" data="images/circle_1_1.svg" type="image/svg+xml"></object>
+        <div id="circle-1-2-group">
+            <object id="circle-1-2" data="images/circle_1_2.svg" type="image/svg+xml"></object>
             <span class="center semibold" style="font-size: 3.7vw;">Hello!<br>I'm a<br>software<br>developer.</span>
         </div>
 
@@ -36,10 +35,32 @@
         <span id="designed-by">Designed by <span style="font-weight: 600;">CAPPEE</span> in 🇮🇹️</span>
     </div>
     <div class="mobile center" style="display: none;">
-        <strong>CAPPEE</strong><br><br>
-        Please, visit this website from a desktop.
+        <svg xmlns="http://www.w3.org/2000/svg">
+            <path fill="#AE1919" transform="translate(100 100)">
+                <animate attributeName="d"
+                    dur="10000ms"
+                    repeatCount="indefinite"
+                    values="M52.1,-71.6C67.5,-60.6,79.8,-45.3,83.1,-28.6C86.4,-11.9,80.6,6.2,71.8,20.3C63.1,34.4,51.4,44.5,38.9,52.9C26.4,61.3,13.2,68.1,-1.3,69.9C-15.8,71.7,-31.6,68.5,-47.3,61.1C-63,53.7,-78.6,42.2,-84.6,26.8C-90.5,11.4,-86.8,-7.8,-80.1,-25.2C-73.3,-42.6,-63.4,-58.1,-49.5,-69.6C-35.7,-81.1,-17.8,-88.5,0.3,-88.8C18.4,-89.2,36.8,-82.6,52.1,-71.6Z;
+                    
+                    M52.9,-73.4C66.8,-62.6,75.2,-44.9,76.8,-27.8C78.5,-10.7,73.3,5.7,67.5,21.3C61.6,37,55,51.7,43.6,58.6C32.2,65.4,16.1,64.3,1.1,62.7C-13.9,61.2,-27.8,59.3,-38,52.1C-48.1,44.9,-54.6,32.3,-62,18.1C-69.5,3.8,-78,-12.1,-74.1,-24.1C-70.3,-36.1,-54.1,-44.1,-39.6,-54.7C-25.2,-65.3,-12.6,-78.5,3.4,-83.2C19.5,-87.9,38.9,-84.1,52.9,-73.4Z;
+                    
+                    M39.4,-51.5C53.9,-43.6,70.5,-36,78.2,-22.9C86,-9.8,84.9,8.7,80.2,26.8C75.4,45,66.9,62.7,52.9,72.9C38.9,83.1,19.5,85.9,1.4,84C-16.7,82.1,-33.4,75.5,-45.3,64.6C-57.2,53.6,-64.3,38.4,-67.6,23.2C-70.8,8,-70.1,-7.3,-65.5,-21.3C-61,-35.3,-52.5,-48,-41,-56.8C-29.4,-65.7,-14.7,-70.6,-1.1,-69C12.4,-67.5,24.9,-59.4,39.4,-51.5Z;
+                    
+                    M52.1,-71.6C67.5,-60.6,79.8,-45.3,83.1,-28.6C86.4,-11.9,80.6,6.2,71.8,20.3C63.1,34.4,51.4,44.5,38.9,52.9C26.4,61.3,13.2,68.1,-1.3,69.9C-15.8,71.7,-31.6,68.5,-47.3,61.1C-63,53.7,-78.6,42.2,-84.6,26.8C-90.5,11.4,-86.8,-7.8,-80.1,-25.2C-73.3,-42.6,-63.4,-58.1,-49.5,-69.6C-35.7,-81.1,-17.8,-88.5,0.3,-88.8C18.4,-89.2,36.8,-82.6,52.1,-71.6Z;"/>
+            </path>
+        </svg>
     </div>
 
 </body>
+
+<script>
+    function openDrawer() {
+        document.getElementById("drawer").style.height = "100%"
+    }
+
+    function closeDrawer() {
+        document.getElementById("drawer").style.height = "0"
+    }
+</script>
 
 </html>

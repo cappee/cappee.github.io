@@ -93,12 +93,7 @@ span {
   margin: 1vw 1vw;
 }
 
-#circle-1 {
-  width: 30vw;
-  height: 30vw;
-}
-
-#circle-1-small {
+#circle-1-1 {
   position: absolute;
   top: 22vh;
   left: 20vw;
@@ -106,9 +101,15 @@ span {
   height: 8vw;
 }
 
-#circle-1-big {
-  width: 11vw;
-  height: 11vw;
+#circle-1-2 {
+  width: 30vw;
+  height: 30vw;
+}
+
+#circle-1-2-group {
+  position: absolute;
+  top: 25vh;
+  left: 18vw;
 }
 
 .center {
@@ -128,4 +129,16 @@ span {
 
 .semibold {
   font-weight: 600;
+}
+
+#drawer {
+  height: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
 }
