@@ -17,15 +17,10 @@ body {
 
   .mobile {
     display: block !important;
-    margin: 0;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    text-align: center;
-    font-size: 2rem;
   }
 }
 
-span, object {
+span, object, img {
   -webkit-user-select: none;
   /* Safari */
   -moz-user-select: none;
@@ -34,6 +29,7 @@ span, object {
   /* IE10+/Edge */
   user-select: none;
   /* Standard */
+  -webkit-user-drag: none;
 }
 
 span {
@@ -129,7 +125,7 @@ span {
 
 .semibold {
   font-weight: 600;
-}
+} 
 
 #drawer {
   height: 0;
@@ -138,7 +134,19 @@ span {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #8B1111;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: 0.75s;
+  transition-timing-function: cubic-bezier(.18,.57,.59,.94);
+}
+
+#close {
+  position: absolute;
+  top: 4vh;
+  left: 2vw;
+  width: 2vw;
+}
+
+#close:active {
+  top: calc(4vh + 1px);
 }
