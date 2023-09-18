@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="toolbar">
+    <div class="toolbar flex">
         <img id="menu" src="images/menu.svg" onclick="openDrawer()"/>
         <span id="cappee">CAPPEE</span>
     </div>
@@ -18,17 +18,49 @@
     </div>
     <div class="page">
         <object id="blob-1" data="images/blob_1.svg" type="image/svg+xml"></object>
+
         <object id="circle-1-1" data="images/circle_1_1.svg" type="image/svg+xml"></object>
         <div id="circle-1-2-group">
             <object id="circle-1-2" data="images/circle_1_2.svg" type="image/svg+xml"></object>
-            <span class="center semibold" style="font-size: 3.7vw;">Hello!<br>I'm a<br>software<br>developer.</span>
+            <div class="center flex">
+                <h1 id="greetings">
+                    Hello!<br>
+                    I'm a
+                    <div class="revolving">
+                      <span>
+                        CS<br>student<br>
+                        software developer<br>
+                        UI/UX<br>designer<br>
+                        engineer (I hope)
+                      </span>
+                    </div>
+                </h1>
+            </div>
+        </div>
+
+        <div class="education">
+            <div id="edu-content">
+                <div class="flex">
+                    <div class="decor"></div>
+                    <span class="title">Education</span>
+                </div>
+                <span id="edu-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eleifend ligula ante, sed tempus metus tincidunt nec. Morbi erat ipsum, tristique at aliquet id, congue ut turpis. Ut nibh elit, pretium vel semper at, porta at augue. Aliquam tempus arcu vel turpis aliquam consectetur. In felis sem, maximus faucibus felis in, gravida facilisis est. Curabitur tempor maximus rhoncus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed dapibus lorem a ligula tristique tristique. Etiam volutpat diam ac neque ultrices dignissim. Duis eu sodales quam, id hendrerit massa. In metus ligula, rhoncus quis nunc at, varius gravida lacus. Curabitur quis sagittis dolor. Integer eget augue mi. Aliquam id neque dignissim, semper ipsum quis, bibendum ante. Sed non commodo dolor, nec elementum justo. Fusce et ipsum nisi.
+                </span>
+            </div>
         </div>
 
         <object id="blob-2" data="images/blob_2.svg" type="image/svg+xml"></object>
 
 
         <object id="blob-3" data="images/blob_3.svg" type="image/svg+xml"></object>
+
         <span id="designed-by">Designed by <span style="font-weight: 600;">CAPPEE</span> in 🇮🇹️</span>
+
+
+        <div style="position: absolute; top: 100vh; background-color: antiquewhite; height: 1px; width: 100%;"></div>
+        <div style="position: absolute; top: 200vh; background-color: antiquewhite; height: 1px; width: 100%;"></div>
+        <div style="position: absolute; top: 300vh; background-color: antiquewhite; height: 1px; width: 100%;"></div>
     </div>
     <div class="mobile" style="display: none;">
         <div class="mobile">

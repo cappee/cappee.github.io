@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: black;
   margin: 0;
@@ -20,7 +24,7 @@ body {
   }
 }
 
-span, object, img {
+h1, span, object, img {
   -webkit-user-select: none;
   /* Safari */
   -moz-user-select: none;
@@ -32,6 +36,11 @@ span, object, img {
   -webkit-user-drag: none;
 }
 
+h1 {
+  font-family: 'Inter', 'sans-serif';
+  color: white;
+}
+
 span {
   font-family: 'Inter', 'sans-serif';
   color: white;
@@ -41,26 +50,24 @@ span {
   position: absolute;
   top: 0;
   right: 0;
-  width: 70vh;
-  height: 70vh;
+  width: 32vw;
+  height: 32vw;
 }
 
 .toolbar {
-  display: flex;
-  align-items: center;
   padding: 2vh 2vw;
 }
 
 #cappee {
   position: relative;
   left: 1vw;
-  font-size: 3vw;
+  font-size: 3.2vw;
   font-weight: 600;
 }
 
 #menu {
   position: relative;
-  width: 2vw;
+  width: 2.2vw;
 }
 
 #menu:active {
@@ -69,17 +76,17 @@ span {
 
 #blob-2 {
   position: absolute;
-  top: 110vh;
+  top: 120vh;
   left: 0;
-  height: 70vh;
-  width: 64vh;
+  height: 30vw;
+  width: 32vw;
 }
 
 #blob-3 {
   position: absolute;
   bottom: -300vh;
   right: 0;
-  height: 125vh;
+  height: 62vw;
 }
 
 #designed-by {
@@ -136,7 +143,7 @@ span {
   left: 0;
   background-color: #8B1111;
   overflow-x: hidden;
-  transition: 0.75s;
+  transition: 0.5s;
   transition-timing-function: cubic-bezier(.18,.57,.59,.94);
 }
 
@@ -144,9 +151,95 @@ span {
   position: absolute;
   top: 4vh;
   left: 2vw;
-  width: 2vw;
+  width: 2.2vw;
 }
 
 #close:active {
   top: calc(4vh + 1px);
+}
+
+.education {
+  position: absolute;
+  top: 100vh;
+  height: 100%;
+  width: 100%;
+}
+
+.decor {
+  position: relative;
+  width: 0.5vw;
+  height: 6vh;
+  background-color: #991919;
+}
+
+.title {
+  position: relative;
+  left: 0.75vw;
+  font-size: 3vw;
+  font-weight: 500;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+#edu-content {
+  position: absolute;
+  top: 12vh;
+  left: 35vw;
+}
+
+#edu-text {
+  position: absolute;
+  top: 7vh;
+  width: 55vw;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.revolving {
+  height: 8.9vw;
+  line-height: 4.3vw;
+  font-size: 4.1vw;
+  overflow: hidden;
+}
+
+.revolving span {
+  position: relative;
+  font-weight: 900;
+  animation: revolving 10s ease infinite;
+}
+
+@keyframes revolving {
+  0%,
+  100% {
+    top: 0;
+  }
+  20% {
+    top: 0;
+  }
+  25% {
+    top: -8.6vw;
+  }
+  45% {
+    top: -8.6vw;
+  }
+  50% {
+    top: -17.4vw;
+  }
+  70% {
+    top: -17.4vw;
+  }
+  75% {
+    top: -26.1vw;
+  }
+  95% {
+    top: -26.1vw;
+  }
+}
+
+#greetings {
+  font-size: 4.1vw;
+  line-height: 4.3vw;
 }
